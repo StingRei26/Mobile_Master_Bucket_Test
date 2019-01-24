@@ -1,0 +1,2464 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<title>HTML5 Responsive Rich Media Banner</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+    <script>
+        EBModulesToLoad = ['EBCMD'];
+    </script>
+	<script type="text/javascript" src="http://ds.serving-sys.com/BurstingScript/adKit/adkit.js"></script>
+
+	<!-- COMMENT THIS LINE OUT PRIOR TO UPLOADING / UNCOMMENT FOR LOCAL TESTING ONLY -->
+<script type="text/javascript" src="scripts/localPreview.js"></script>
+</head>
+
+<body>
+
+<style>
+
+/* ------------------------------------------------------------ */
+/* -----> RESET.CSS INCLUDED HERE TO REDUCE SERVER CALLS <----- */
+/* ------------------------------------------------------------ */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; } article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video { display: block; } a img {border: 0;}
+
+/* --------------------------------------------- */
+/* -----> FONT IMPORTS PER REFERENCE FILE <----- */
+/* --------------------------------------------- */
+@import url(https://fast.fonts.net/t/1.css?apiType=ad&projectid=21dfec3a-67e2-4918-9142-bfaf8a92f03f);
+  @font-face{font-family:"Proxima N W01 Reg";
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=aEQPPHegxpcMofj1Jp1tYXKqiOi9p687nKTqLsOq73tJQoR0ctMtTzsiZt8wVkyywZljis6XqhTOA87xBh2gII4u354RCpSLWvyOsTpDWSwYqZebhMSWmmB1fRC4gv4mw%2bgNckgkXbWXsUdbthhC8DaHdyfU7SRnJWmmYlaPg8E%3d);
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=aEQPPHegxpcMofj1Jp1tYXKqiOi9p687nKTqLsOq73tJQoR0ctMtTzsiZt8wVkyywZljis6XqhTOA87xBh2gII4u354RCpSLWvyOsTpDWSwYqZebhMSWmmB1fRC4gv4mw%2bgNckgkXbWXsUdbthhC8DaHdyfU7SRnJWmmYlaPg8E%3d#iefix) format("eot"),url(https://apiadn.fonts.com/v2/fonts/subset?x=bnlTGL%2flyERMvMB5KGT1XBXveOQr4%2f%2bsI8BXrDMbjKe%2fF%2fL%2bj0ydN4duUIuaJlKXIIeTW0CRI%2fxdcolu2oF2vGuxRdnwi3evMn0sJDUojwrNdOaEOnIGgnsirqykyQ5WF7nSFsayiEBjIUQedsS%2ftSfTxGgByozSb5GNszYPHG8%3d) format("woff2"),url(https://apiadn.fonts.com/v2/fonts/subset?x=7lOozVx17sBSzsSHZRAsBC1QzJejLKkoqlkZJJA7s5wDJrO6eUaNgLBUCc3UDRmiWlHxWEy%2bHKcjWobUn06eTgU7LoeE7jT8pPX35hzyd2hUVGY3c%2fV7UCJBagiDRKvps9xb6oxPVgoBNrCrFuuDCGuYWsPDI0cUA7DsHslAy6o%3d) format("woff"),url(https://apiadn.fonts.com/v2/fonts/subset?x=YdU1Gas3Kn1GLOFex%2fIYiPq%2fAYSzutipKMkVmBE2Aiv46sUG8HgSPatrkyifHCf7eJaVv1qkqX6BQCC8Sq3HcRN2tMuoqzgXV%2bBJ4wTSScRK9XVKhCeDCO2TGwwWiHBWJmJxF7X0timAIhkGq8v%2bDQvO02r3FUEnxmQpNDF0w%2fQ%3d) format("truetype")}
+  @font-face{font-family:"Proxima N W02 Bold";
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=3m9sZXQqzMRmVlycd6e8QzKwa6vl4y002J4aBR1aKDSyu2Ocz0RsIiawLUEx5xq56KII8cd2WTai5kabaKAkw7oG4uv9a6fJ1gv533XGp3H9kzQik0Je2ND%2fvD%2bZVkl6kETg4NsfrV4NHWrsLDP5hiiYHLMFm2k3GpQboFeQcmU%3d);
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=3m9sZXQqzMRmVlycd6e8QzKwa6vl4y002J4aBR1aKDSyu2Ocz0RsIiawLUEx5xq56KII8cd2WTai5kabaKAkw7oG4uv9a6fJ1gv533XGp3H9kzQik0Je2ND%2fvD%2bZVkl6kETg4NsfrV4NHWrsLDP5hiiYHLMFm2k3GpQboFeQcmU%3d#iefix) format("eot"),url(https://apiadn.fonts.com/v2/fonts/subset?x=1jA8a6kaT0NuM7%2bf3PrZlFxldvUathMnC%2f592lbImbxX%2bOOLy907FNTWTVYORp7aeZJX%2btakG%2f%2fq0iQx0DcUwTKZzUUBh4qngYv0%2fYfQFtZIqulpn%2bAo3nzeRj06oxR0Q%2fkhqK4Bf9x9V2Op18nDmDRhuvxT3Q1IZdk1FjfIpQk%3d) format("woff2"),url(https://apiadn.fonts.com/v2/fonts/subset?x=nzdUhcdHlj0pVBSBB89zTJ0%2fCPooMF5f5g8qZykOr91eS1u37i6ARGaTPm%2fj5Cq1AH6duCKKlhibgGZWaf3NzJ6jHFPFziUNo4fjXJqpJpRncwALwwvDbYPsJPEE9QGFigqBAmcOr8ev2E6jZZw7sIhuxg6xhyrf16kPX0b4jVY%3d) format("woff"),url(https://apiadn.fonts.com/v2/fonts/subset?x=KPD8T4ogq%2bRh4h2g11CLb%2b3Y%2fhJq8zFkyeIAzOe5sxmw1hm1gPgZXzeSGjeaBYPzKsAN4x9wHKYrI1EARYHn7zFO1EMrgMI%2fgV0BmmzJWxR2ILwhNs1lt%2b2Oyh1tFejS8rPCR5IjRxz8MOrmgtX3MV%2bK1RsAj0G3VrVZ2BEh9As%3d) format("truetype")}
+  @font-face{font-family:"Proxima N W02 Smbd";
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=wt0z0ND%2fdjdWsmIUOO6vXq1qtPwCMYyUOGnyXvVBJ4eB%2f4iajAbNUvXJ13ifoOJCpMq28VCdpA1IcuurYjN5h9gemMTpvwhW8JlYNvNvdwyxpA1JJhvIgSEntpbeP9ydHsDLNL5lzqf5Wm3dURpTnx5ZFNVlS7%2bUCdOXz9WA84k%3d);
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=wt0z0ND%2fdjdWsmIUOO6vXq1qtPwCMYyUOGnyXvVBJ4eB%2f4iajAbNUvXJ13ifoOJCpMq28VCdpA1IcuurYjN5h9gemMTpvwhW8JlYNvNvdwyxpA1JJhvIgSEntpbeP9ydHsDLNL5lzqf5Wm3dURpTnx5ZFNVlS7%2bUCdOXz9WA84k%3d#iefix) format("eot"),url(https://apiadn.fonts.com/v2/fonts/subset?x=u0tNb2sdJWaRi%2b4hqjxTTzB%2f8nmJQt%2fEcqOKtiV67VzasOTDgXCQ28zU9bRO5OVdCaAk7C5I8f7deeHeQaJVF%2fiWMjvuE%2bKVdtojR4VDuYjlNLbN3In%2beBBhYbXSyKtrOmnyG6lk2KMvgTYJ24bq1WHVqYmVb7FoOeD7I1LfGrw%3d) format("woff2"),url(https://apiadn.fonts.com/v2/fonts/subset?x=cXybx6EtjJgxMPFEs3rQmqRA6uTaSI2YrmI6040oS2qN3%2b6%2fhJvSMeO9IdbyhhWh5%2btjwBBYmxHZJCBx4ssg5FYCsr4WWtTWolGFbA6L%2fEqNXJrOnLSidhERjEKmkDvjHlA1Tx87zuqlLhgpEradmeTJ6bY0TXQ6IdTxR3vu6p4%3d) format("woff"),url(https://apiadn.fonts.com/v2/fonts/subset?x=PJsSGUv6%2fUtao1%2bt4ykLCOIhXuvQSsoAfnsxkh0ro3loHePTLvUYqPRKrFAo4DvV9MfRfkMbBmM4UVJ%2fGv8BmGAVOLM8GaKUG%2fKGKiKx5NzZItP1NM9na%2bxyBpSQlZl9LZ75ZLApPwXorbxxMQk6GOW%2fp3qGn6Nee0Cbu1kyhDg%3d) format("truetype")}
+
+/* ------------------------------------------------------------------- */
+/* -----> BODY STYLE TO PREVENT FONT SCALLING ON MOBILE DEVICES <----- */
+/* ------------------------------------------------------------------- */
+body{
+    -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+
+    -webkit-text-size-adjust: none;
+    zoom: 100%;
+}
+
+/* --------------------- */
+/* -----> GENERAL <----- */
+/* --------------------- */
+#adWrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    visibility: hidden;
+}
+
+#adContainer{
+    width: 100%;
+    height:380px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 414px;
+    margin: auto;
+    overflow: hidden;
+    background-color: #252525;
+    cursor: pointer;
+    font-family: "Proxima N W01 Reg";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ------------------------------- */
+/* -----> MAIN CONTENT AREA <----- */
+/* ------------------------------- */
+#contentContainer, #failsafeContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    visibility: hidden;
+    display: none;
+}
+
+#mobileFailsafe, #desktopFailsafe{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#mobileFailsafe{
+    background-position: center;
+}
+
+/* -------------------- */
+/* -----> MOBILE <----- */
+/* -------------------- */
+#mobileContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width: 414px;
+}
+
+#mobileGallery{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+#mobileFooter{
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10; 
+    background-color:#000;
+}
+
+
+
+#mobile_frame_1{
+    z-index: 10; 
+    height:380px; 
+}
+
+#mobile_frame_1, .frame {
+    /*border: 1px solid yellow;*/
+    position: relative;
+    background-size: contain;
+    /*background-image: url(images/failsafe_mobile2.jpg);*/
+    /* object-fit: contain; */
+    width: 414px;
+    height: 335px;
+    background-size: 100% 100%;
+
+
+}
+
+
+
+#mobileFooterHitArea{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+#navDotsContainer{
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    -webkit-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+
+#navDots{
+    width: auto;
+    height: 6px;
+    position: absolute;
+    bottom: -3px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+#navDots2{
+    width: auto;
+    height: 6px;
+    position: absolute;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    right: 48px;
+    bottom: 15px;
+}
+.navDot{
+    width: 6px;
+    height: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
+    float: left;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.navDot2{
+    width: 6px;
+    height: 6px;
+    margin-left: 4px;
+    margin-right: 4px;
+    float: left;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.navDotActive{
+    background-color: #FFF;
+
+    -webkit-transition: background-color .25s ease;
+    transition: background-color .25s ease;
+}
+.navDotInactive{
+    background-color: #999;
+
+    -webkit-transition: background-color .25s ease;
+    transition: background-color .25s ease;
+}
+
+
+/* -------------------- */
+/* -----> DESKTOP <----- */
+/* --------------------- */
+#desktopContainer{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    display:none
+}
+
+#desktopHeroContainer{
+    width: 949px;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+#desktop_frame_1_logoImg,
+#desktop_frame_2_logoImg, 
+#desktop_frame_3_logoImg, 
+#desktop_frame_4_logoImg, 
+#desktop_frame_5_logoImg {
+    height: 101px;
+    width: 172px;
+}
+
+
+#desktop_frame_1, 
+#desktop_frame_2,
+#desktop_frame_3,
+#desktop_frame_4,
+#desktop_frame_5,
+#desktop_frame_6
+{
+-webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.92);
+-moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.92);
+box-shadow:  0 2px 10px 0 rgba(0, 0, 0, 0.92);
+}
+
+#desktop_frame_1.frame
+#desktop_frame_2.frame,
+#desktop_frame_3.frame,
+#desktop_frame_4.frame,
+#desktop_frame_5.frame,
+#desktop_frame_6.frame
+{
+
+    
+}
+
+
+#desktopGallery{
+    width: 552px;
+    height: 208px;
+    position: absolute;
+    top:11%;
+    box-sizing: border-box;
+    z-index: 999; 
+    right:351px; 
+}
+
+#desktopLeftArrowContainer, #desktopRightArrowContainer{
+    width: 80px;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+}
+#desktopLeftArrowContainer{
+    right:566px; 
+}
+#desktopLeftArrowContainer.active{
+    bottom: 0%;
+    opacity: 1;
+}
+#desktopRightArrowContainer{
+    bottom: 0px;
+    right: 0px;
+}
+
+#desktopLeftArrowBtn, #desktopRightArrowBtn{
+    pointer-events: auto;
+}
+
+/* -------------------- */
+/* -----> SHARED <----- */
+/* -------------------- */
+
+.genClk, .frameClk, .ie10HitArea{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;      
+}
+
+#desktop_frame_1_click, 
+#desktop_frame_2_click, 
+#desktop_frame_3_click, 
+#desktop_frame_4_click, 
+#desktop_frame_5_click, 
+#desktop_frame_6_click {
+
+   
+}
+
+
+/*.ie10HitArea{
+    display: none;
+    background-color: rgba(0,0,0,0.001);
+}*/
+
+/* -----> FRAMES <----- */
+/* -------------------- */
+
+/* -----> ALL <----- */
+.frame{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #4c4c4c;
+}
+
+.grad{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.62));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 );
+}
+
+/* -----> HERO <----- */
+.hero_copyContainer{
+    width: auto;
+    height: auto;
+    position: absolute;
+    text-align: left;
+}
+.mobile .hero_copyContainer{
+    width: calc(100% - 30px);
+    bottom: 25px;
+    left: 25px;
+}
+.desktop .hero_copyContainer{
+    width: calc(100% - 50px);
+    bottom: 25px;
+    left: 25px;
+}
+
+.hero_kicker{
+    width: auto;
+    height: auto;
+    font-family: "Proxima N W01 Reg";
+}
+.desktop .hero_kicker{
+    font-size: 13px;
+    line-height: 14px;
+}
+
+.hero_headline{
+    width: auto;
+    height: auto;
+    font-family: "Proxima N W02 Smbd";
+    font-size:27px; 
+}
+.mobile .hero_headline{
+    padding-top: 3px;
+}
+.desktop .hero_headline{
+    padding-top: 3px;
+    font-size: 27px;
+    line-height: 28px;
+}
+
+.hero_descriptor{
+    width: auto;
+    height: auto;
+    font-family: "Proxima N W01 Reg";
+}
+.mobile .hero_descriptor{
+    padding-top: 3px;
+}
+.desktop .hero_descriptor{
+    padding-top: 5px;
+    font-size: 18px;
+    line-height: 19px;
+}
+
+.hero_logo{
+    position: absolute;
+    z-index: 200;
+}
+.mobile .hero_logo{
+    top: 25px;
+    left: 25px;
+    height: 50px;
+    max-width: 130px;
+    max-height: 50px;
+}
+.desktop .hero_logo{
+    top: 25px;
+    left: 25px;
+    height: 45px;
+    max-height: 45px;
+    max-width: 145px;
+}
+
+.hero_logo img{
+    width: auto;
+}
+.mobile .hero_logo img{
+    height: 50px;
+    max-height: 50px;
+    position:fixed; 
+}
+.desktop .hero_logo img{
+    height: 45px;
+    max-height: 45px;
+    max-width: 145px;
+}
+
+/*#desktop_frame_1_logoImg {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xTIRrBZTXVDmpaq9AV4NusmHetBF3zRoVKb63q8Rsh240uSS')!important; 
+}*/
+
+/* -----> ARTICLES <----- */
+.article_contentContainer{
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.mobile .article_contentContainer{
+    width: calc(100% - 30px);
+    margin: 0 15px 0 15px;
+}
+.desktop .article_contentContainer{
+    width: 100%;
+}
+
+.article_logo{
+    position: absolute;
+}
+.mobile .article_logo{
+    /*margin: 15px 0 0 15px;*/
+}
+.desktop .article_logo{
+    /* margin: 25px 0 0 15px; */
+}
+
+
+#mobile_frame_2_logoImg, 
+#mobile_frame_3_logoImg,
+#mobile_frame_4_logoImg, 
+#mobile_frame_5_logoImg, 
+#mobile_frame_6_logoImg {
+    width: 100%;
+    height: 298px;
+    /* top: 10px; */
+    margin-top: 37px;
+    object-fit: cover;
+}
+
+.article_copyContainer{
+    width: auto;
+    height: auto;
+    position: absolute;
+    bottom: -16px; 
+}
+.mobile .article_copyContainer{
+    max-width: calc(100% - 30px);
+    margin: 15px 15px 65px 25px;
+
+}
+
+.mobile .article_copyContainer::after{
+background: -webkit-radial-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.62) 100%)!important;
+    background: radial-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.62) 100%)!important;
+
+}
+
+
+.desktop .article_copyContainer{
+    max-width: calc(100% - 30px);
+    margin: 25px 15px 0px 15px;
+}
+
+.article_kicker{
+    width: auto;
+    height: auto;
+}
+.mobile .article_kicker{
+    font-size: 14px;
+    line-height: 14px;
+    font-family: "Proxima N W02 Smbd";
+    color:white!important
+}
+.desktop .article_kicker{
+    font-size: 13px;
+    line-height: 14px;
+    font-family: "Proxima N W01 Reg";
+}
+
+.article_headline{
+    width: auto;
+    height: auto;
+    font-family: "Proxima N W02 Smbd";
+    font-size: 26px;
+    line-height: 28px
+}
+.mobile .article_headline{
+    padding-top: 3px;
+}
+.desktop .article_headline{
+    font-size: 13px;
+    line-height: 1.31;
+    padding-top: 3px;
+
+}
+
+.article_descriptor{
+    width: auto;
+    height: auto;
+    font-family: "Proxima N W01 Reg";
+}
+.mobile .article_descriptor{
+    margin-top: 5px;
+}
+.desktop .article_descriptor{
+
+}
+
+.article_cta{
+    width: auto;
+    height: auto;
+    font-family: "Proxima N W02 Smbd";
+    text-decoration: underline;
+}
+.mobile .article_cta{
+    font-size: 13px;
+    line-height: 14px;
+    padding-top: 12px;
+}
+.desktop .article_cta{
+    font-size: 13px;
+    line-height: 14px;
+    padding-top: 8px;
+}
+
+
+/* -----> NAV ARROWS <----- */
+/* ------------------------ */
+.leftArrowBtn, .rightArrowBtn{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: 50%;
+    margin-bottom: -20px;
+    overflow: hidden;
+    z-index: 100;
+    pointer-event: auto;
+}
+.leftArrowBtn{
+    /*left: -639px;*/
+    z-index: 1000; 
+}
+.rightArrowBtn{
+    right: 5px;
+}
+.leftArrow, .rightArrow{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 50%;
+}
+.leftArrow{
+    left: 19px;
+    border-left: 1px solid #4c4c4c;;
+    border-top: 1px solid #4c4c4c;
+    -webkit-transform: rotate(-45deg) skew(6deg, 6deg) translate3d(0, 0, 0);
+    transform: rotate(-45deg) skew(6deg, 6deg) translate3d(0, 0, 0);
+    margin-top:-7px; 
+}
+
+.leftArrow:hover{
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+}
+
+
+.rightArrow{
+    right: 12px;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    -webkit-transform: rotate(45deg) skew(-6deg, -6deg) translate3d(0, 0, 0);
+    transform: rotate(45deg) skew(-6deg, -6deg) translate3d(0, 0, 0);
+
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+}
+
+.rightArrow:hover {
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+}
+
+#ContentSelected{
+    display: block;
+    right: 0px;
+    position: absolute;
+    margin-right: 244px;
+    top:17px;
+    /*font-family: ProximaNova;*/
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+
+}
+
+#ContentSelectedMobile{
+    position: relative;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.36;
+    letter-spacing: normal;
+    text-align: center;
+    color: #ffffff;
+    z-index: 9;
+    background: black;
+    height: 37px;
+}
+
+
+#ContentSelectedMobile p {
+    padding-top: 10px;
+}
+
+
+/*------------------------*/
+/*-----> ANIMATIONS <-----*/
+/*------------------------*/
+
+/*-----> MOBILE GALLERY NAV <-----*/
+@-webkit-keyframes mobileFrameOnFromRight{
+    0%{
+        -webkit-transform:translateX(100%);
+        transform:translateX(100%);
+    }
+    100%{
+        -webkit-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+}
+@keyFrames mobileFrameOnFromRight{
+    0%{
+        -webkit-transform:translateX(100%);
+        transform:translateX(100%);
+    }
+    100%{
+        -webkit-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+}
+
+@-webkit-keyframes mobileFrameOnFromLeft{
+    0%{
+        -webkit-transform:translateX(-100%);
+        transform:translateX(-100%);
+    }
+    100%{
+        -webkit-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+}
+@keyFrames mobileFrameOnFromLeft{
+    0%{
+        -webkit-transform:translateX(-100%);
+        transform:translateX(-100%);
+    }
+    100%{
+        -webkit-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+}
+
+@-webkit-keyframes mobileFrameOffToRight{
+    0%{
+        -webkit-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+    100%{
+        -webkit-transform:translateX(100%);
+        transform:translateX(100%);
+    }
+}
+@keyFrames mobileFrameOffToRight{
+    0%{
+        -webkit-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+    100%{
+        -webkit-transform:translateX(100%);
+        transform:translateX(100%);
+    }
+}
+
+@-webkit-keyframes mobileFrameOffToLeft{
+    0%{
+        -webkit-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+    100%{
+        -webkit-transform:translateX(-100%);
+        transform:translateX(-100%);
+    }
+}
+@keyFrames mobileFrameOffToLeft{
+    0%{
+        -webkit-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+    100%{
+        -webkit-transform:translateX(-100%);
+        transform:translateX(-100%);
+    }
+}
+
+
+/*---------------------------------------*/
+/*-----> MEDIA QUERY SIZING STYLES <-----*/
+/*---------------------------------------*/
+
+/*-----> MOBILE SIZINGS <-----*/
+/*----------------------------*/
+
+/* Copy size adjustment mobile break points */
+@media(min-width: 0px) and (max-width: 374px){
+    /* -------------------------- */
+    /* -----> MOBILE  COPY <----- */
+    /* -------------------------- */
+    .mobile .hero_kicker{
+        font-size: 12px;
+        line-height: 13px;
+    }
+    .mobile .hero_headline{
+        font-size: 24px;
+        line-height: 25px;
+    }
+    .mobile .hero_descriptor{
+        font-size: 15px;
+        line-height: 16px;
+    }
+
+    .mobile .article_headline{
+        font-size: 24px;
+        line-height: 25px;
+    }
+    .mobile .article_descriptor{
+        font-size: 13px;
+        line-height: 16px;
+    }
+}
+@media(min-width: 375px) and (max-width: 700px){
+    /* -------------------------- */
+    /* -----> MOBILE  COPY <----- */
+    /* -------------------------- */
+    .mobile .hero_kicker{
+        font-size: 13px;
+        line-height: 14px;
+    }
+    .mobile .hero_headline{
+        font-size: 26px;
+        line-height: 28px;
+    }
+    .mobile .hero_descriptor{
+        font-size: 18px;
+        line-height: 19px;
+    }
+
+    .mobile .article_headline{
+        font-size: 26px;
+        line-height: 28px;
+    }
+    .mobile .article_descriptor{
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .article_copyContainer{
+        top:"";
+    }
+}
+
+/* Main mobile size dependent adjustments here */
+@media(min-width: 0px) and (max-width: 700px){
+    /* --------------------- */
+    /* -----> GENERAL <----- */
+    /* --------------------- */
+    #adContainer{
+        height: 380px;
+        max-width: 414px;
+    }
+
+    /* ------------------------------- */
+    /* -----> MAIN CONTENT AREA <----- */
+    /* ------------------------------- */
+    #mobileContainer, #mobileFailsafe{
+        visibility: visible;
+    }
+
+    #desktopContainer, #desktopFailsafe{
+        visibility: hidden;
+    }
+}
+
+
+/*-----> DESKTOP SIZINGS <-----*/
+/*-----------------------------*/
+
+/* Main desktop size dependent adjustments here */
+@media(min-width: 701px){
+    /* --------------------- */
+    /* -----> GENERAL <----- */
+    /* --------------------- */
+    /*#adContainer{
+        height: 270px;
+        max-width: 1605px;
+    }*/
+
+    /* ------------------------------- */
+    /* -----> MAIN CONTENT AREA <----- */
+    /* ------------------------------- */
+    /*#mobileContainer, #mobileFailsafe{
+        visibility: hidden;
+    }*/
+
+    /*#desktopContainer, #desktopFailsafe{
+        visibility: hidden;
+    }*/
+
+}
+
+@media screen and (max-width: 1598px){
+#desktopHeroContainer {
+    width: calc(100% - 649px);
+    object-fit: cover;
+}
+}
+
+
+@media (min-width:700px) and (max-width: 1200px){
+#desktopHeroContainer {
+    width: calc(100% - 443px);
+    object-fit: cover;
+}
+
+.leftArrow{
+    left:12px;
+}
+
+#ContentSelected {
+    margin-right:153px; 
+}
+
+
+/*.leftArrowBtn {
+    right:-167px; 
+    left:auto; 
+}*/
+
+}
+
+@media (min-width:700px) and (max-width: 850px){
+#desktopHeroContainer {
+    width: calc(100% - 241px);
+    object-fit: cover;
+
+}
+
+
+#ContentSelected {
+    margin-right: 47px;
+
+}
+
+#desktop_frame_1, 
+#desktop_frame_2,
+#desktop_frame_3,
+#desktop_frame_4,
+#desktop_frame_5,
+#desktop_frame_6{
+ left:10px;
+
+}
+
+
+
+/*.leftArrowBtn{
+    right:-367px; 
+    left:auto; 
+}*/
+
+
+#navDots2{
+    right:57px; 
+}
+
+
+
+}
+
+
+
+
+@media (min-width:850px){
+
+
+#navDots2 {
+    display: none; 
+
+
+}
+
+}
+
+/*THIS MAKES THE UNIT MOBILE ONLY 
+
+@media screen and (min-width:700px){
+
+#adWrapper{
+    display:none; 
+}
+
+}
+/*-----> DESKTOP BREAKPOINT ONE (DYNAMICALLY SIZED HERO CONTAINER) <-----*/
+/* TWO MEDIA QUERIES REQUIRED AS NO CSS MIN_LEFT EXISTS FOR GALLERY PLACEMENT @ HERO MIN_WIDTH OF 425PX */
+/*@media(min-width: 701px) and (max-width: 772px){
+    #desktopHeroContainer{
+        width: calc(100% - 347px);
+        min-width: 425px;
+    }
+
+    #desktopGallery{
+        left: 425px;
+    }
+}*/
+/*@media(min-width: 773px) and (max-width: 899px){
+    #desktopHeroContainer{
+        width: calc(100% - 347px);
+        min-width: 425px;
+    }
+
+    #desktopGallery{
+        left: calc(100% - 347px);
+    }
+}*/
+
+
+
+/*-----> DESKTOP BREAKPOINT TWO (STATIC SIZED HERO CONTAINER) <-----*/
+@media(min-width: 900px){
+    /* #desktopHeroContainer{
+        width: 553px;
+    } */
+
+    
+}
+
+
+</style>
+
+<div id="adWrapper">
+    <div id="adContainer">
+        <div id="contentContainer">
+			<!-- MOBILE -->
+			<div id="mobileContainer" class="mobile">
+                <div id = ContentSelectedMobile>
+                    
+                  <p>Content Selected by <b>BMW</b></p>
+				
+                </div>
+                <!--<div class="grad"></div>-->
+                <div id="mobileGallery"></div>
+                
+				<div id="mobileFooter">
+					<div id="navDotsContainer">
+		                <div id="navDots"></div>
+		            </div>
+					<div id="mobileFooterHitArea"></div>
+					<div id="mobileLeftArrowBtn" class="leftArrowBtn">
+						<div class="leftArrow"></div>
+					</div>
+					<div id="mobileRightArrowBtn" class="rightArrowBtn">
+						<div class="rightArrow"></div>
+					</div>
+				</div>
+			</div>
+			<!-- DESKTOP -->
+			<div id="desktopContainer" class="desktop">
+				<div id="desktopHeroContainer"></div>
+                <div id="desktopLeftArrowContainer">
+						<div id="desktopLeftArrowBtn" class="leftArrowBtn">
+							<div class="leftArrow"></div>
+						</div>
+					</div>
+                
+                <p id = ContentSelected>Content Selected by <b>BMW</b></p>			
+                <div id="desktopGallery">	
+				</div>
+                
+				<div id="desktopRightArrowContainer">
+					<div id="desktopRightArrowContainerIE10HitArea" class="ie10HitArea"></div>
+					<div id="desktopRightArrowBtn" class="rightArrowBtn">
+						<div class="rightArrow"></div>
+					</div>
+				</div>
+                <div id="navDotsContainer2">
+		                <div id="navDots2"></div>
+		        </div>
+			</div>
+        </div>
+		<div id="failsafeContainer">
+			<div id="mobileFailsafe" class="mobile">
+				<!--  -->
+			</div>
+			<div id="desktopFailsafe" class="desktop">
+				<!--  -->
+			</div>
+		</div>
+    </div>
+</div>
+
+<script>
+
+/*------------------------*/
+/*-----> VARIABLES  <-----*/
+/*------------------------*/
+var creativeId = "HTMLResponsiveRichMediaBanner";
+var creativeVersion = "1.1.0";
+var lastModified = "2017-02-07";
+var lastUploaded = "2017-02-07";
+var templateVersion = "2.0.24"; // sdf replace
+var templateName = "cf_deluxe_banner_flex_frame_iq_1x1_" + creativeVersion + "_6266"; // cf_[format_name]_[template_name]_[wxh]_version_BlockID
+var scrollPos = {x:undefined, y:undefined};
+var adId, rnd, uid, versionID;
+
+var feedCallBackFailsafeTimer; // Vairable to hold timeout for tritggering of failsafe
+var failsafeDuration = 3000;   // Duration of time without response from data feed call to triggering of failsafe
+var dataArray; 
+
+var mobileTotalGalleryFrames;
+var mobileCurrentGalleryFrame = 1;
+
+var desktopTotalGalleryFrames;
+var desktopCurrentGalleryFrame = 1;
+var desktopGalleryFramePosArr = [];
+
+var isIE10 = (navigator.userAgent.indexOf("MSIE 10") !== -1)?true:false;
+
+
+/*------------------------------*/
+/*-----> TEMPLATE CONFIG  <-----*/
+/*------------------------------*/
+
+
+var creativeConfigObj = {
+
+
+    // Feed URL should be entered as non-secure.  Function "getFeed" will modify to secrue where required.
+    
+    // feedURL: "https://res.cloudinary.com/nyt-platforms/raw/upload/v1547741558/Rei%20Test%20Creatives/1_17_19_QraphQL.json",
+    feedURL: "https://storage.googleapis.com/nyt-iq-workflow-output-dev/Input_test_4_articles.json",
+
+
+
+    // FeedVersion acceptable values are "json", "xml", "json_jsonp_mirror", "xml_jsonp_mirror".
+    feedVersion: "json",
+
+    // Set backup image URL to populate on data feed fail or invalid response
+    // See function "goFailsafe"
+    failsafeMobileImageURL: "images/failsafe_mobile.jpg",
+    failsafeDesktopImageURL: "images/failsafe_desktop.jpg",
+
+    // If specific line breaks are required please add " <br/> " in those locations.  EG: "Headline Text<br/>Goes Here"
+    // descriptor - hero frame descriptor is optionsl.  Set to blank string or null when not desired
+    // If headline and descriptor are used, each may span up to two lines.
+    // If descriptor is not used, headline may span up to three lines.
+    heroFrame: {
+        backgroundImageURL: {
+            mobile: "images/failsafe_mobile2.jpg",
+            desktop: "images/img1.jpg"
+        },
+        logo: {
+            url:  "images/white@2x.png"
+        },
+        kicker: {
+            copy: "",
+            color: "#CCC"
+        },
+        headline: {
+            copy: "Headline Text Here",
+            color: "#FFF"
+        },
+        descriptor: {
+            copy: "Descriptor here",
+            color: "#FFF"
+        }
+    },
+
+    // Article frames logo, kicker and CTA entered here.
+    // Article frame kicker will only appear on the mobile layout.  The desktop layout will show only "The New York Times" in this area.
+    // Article frame kicker should only include section name.  " | The New York Times" will be automaticle appended.
+    // Titles and clickout URLs are pulled in from data feed and populated into "articleFrames".
+    // Total frames created will always match the length of the array held within "articleFrames".
+    // NOTE: articleFrames array should never be set to less than 6 total slides however can be set higher by any amount.
+    //       If set higher please update the click out function below to relfect the total number of click tracking strings as they must be hardcoded.
+    articleFrames: [
+        //1
+        {
+            logo: {
+                url:"",
+            },
+            kicker: {
+                copy: "SECTION",
+                color: "#CCC"
+            },
+            cta: {
+                copy: "",
+                color: "#4990E2"
+            }
+        },
+        //2
+        {
+            logo: {
+                url:  "",
+            },
+            kicker: {
+                copy: "SECTION",
+                color: "#CCC"
+            },
+            cta: {
+                copy: "",
+                color: "#4990E2"
+            }
+        },
+        //3
+        {
+            logo: {
+                url:  "",
+            },
+            kicker: {
+                copy: "SECTION",
+                color: "#CCC"
+            },
+            cta: {
+                copy: "",
+                color: "#4990E2"
+            }
+        },
+        //4
+        {
+            logo: {
+                url:  "",
+            },
+            kicker: {
+                copy: "SECTION",
+                color: "#CCC"
+            },
+            cta: {
+                copy: "",
+                color: "#4990E2"
+            }
+        }
+        //5
+        // {
+        //     logo: {
+        //         url:  "",
+            
+        //     },
+        //     kicker: {
+        //         copy: "SECTION",
+        //         color: "#CCC"
+        //     },
+        //     cta: {
+        //         copy: "",
+        //         color: "#4990E2"
+        //     }
+        // }
+        //5
+        // {
+        //     logo: {
+        //         url:  "",
+        
+        //     },
+        //     kicker: {
+        //         copy: "SECTION",
+        //         color: "#CCC"
+        //     },
+        //     cta: {
+        //         copy: "",
+        //         color: "#4990E2"
+        //     }
+        // }
+       
+
+    ]
+}
+
+/*-----> END TEMPLATE CONFIG  <-----*/
+
+
+/*----------------------------*/
+/*-----> INITIALIZATION <-----*/
+/*----------------------------*/
+function checkIfAdKitReady(event) {
+    try {
+		if (window.localPreview) {
+			adkit.onReady(function() {
+				window.initializeLocalPreview(); // In localPreview.js
+				initializeCreative();
+			});
+			return;
+		} else {
+			window.localPreview = false;
+		}
+	} catch (e) {
+		window.localPreview = false;
+	}
+
+	// below comment by MSD
+	// adkit.onReady(initializeCreative);
+
+	// START ADD BY MSD
+	if (window.adkit) {
+		adkit.onReady(initializeCreative);
+	} else {
+		initializeCreative();
+	}
+	// END ADD BY MSD
+}
+
+function initializeCreative() {
+	var viewportMeta = document.querySelector('meta[name="viewport"]');
+    viewportMeta.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0");
+
+    window.setTimeout(function(e){
+        viewportMeta.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0");
+    }, 500);
+
+	//Workaround (from QB6573) for Async EB Load where Modernizr isn't properly initialized
+	typeof Modernizr == "object" && (Modernizr.touch = Modernizr.touch || "ontouchstart" in window);
+
+    EBG.pm.bind("sendCreativeId", function() {
+		eventManager.apply(this, arguments);
+	}, this);
+	EBG.pm.bind("eventCallback", function() {
+		eventManager.apply(this, arguments);
+	}, this);
+
+    initializeGlobalVariables();
+    setCreativeVersion();
+
+	//-->
+
+    // Call data feed
+    getFeed(creativeConfigObj.feedURL, creativeConfigObj.feedVersion);
+
+    window.setTimeout(function(e){
+        document.getElementById("adWrapper").style.visibility = "visible";
+    }, 250);
+
+}
+
+function initializeGlobalVariables() {
+	adId = EB._adConfig.adId;
+	rnd = EB._adConfig.rnd;
+	uid = EB._adConfig.uid;
+
+    try{
+        versionID = EB._adConfig.massVersioning.adVersions.split("_")[0];
+    }catch(err){
+        versionID = "";
+    }
+}
+
+/*-----------------------*/
+/*-----> FUNCTIONS <-----*/
+/*-----------------------*/
+
+/*-----> DATA FEED <-----*/
+function getFeed(url, version){
+    // Start response timer
+    feedCallBackFailsafeTimer = window.setTimeout(goFailsafe, failsafeDuration);
+
+    // Check current protocol and replace current URL protocol to match
+    var proto = ('https:' == document.location.protocol ? 'https://' : 'http://');
+    var finalURL =  proto + url.slice(url.indexOf("://")+3);
+
+    // Call feed as required according to feed type used.
+    // Possiable feed type are JSON, XML or JSONP.  JSONP type are conversions of the initial two types listed.
+    switch(version){
+        case "json": case "xml":
+            callAJAX(finalURL, version);
+            break;
+        case "json_jsonp_mirror": case "xml_jsonp_mirror":
+            callJSONP(finalURL);
+            break;
+        default:
+            goFailsafe();
+            break;
+    }
+}
+
+// Call JSON or XML type feed via AJAX request
+function callAJAX(url, version){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if(this.readyState === 4){
+            if(this.status === 200){ // Status 200 = successful HTTP requests, pass returned data for check/use
+                if(version === "json"){
+                    // Due to browser compatibility issues do not use XMLHttpRequest.responseType("json") for JSON feed
+                    // JSON returns should be received as text and parsed as per below to JSON
+                    handleReturnedFeedData(JSON.parse(xhttp.responseText));
+                }else{
+                    handleReturnedFeedData(xhttp.responseXML);
+                }
+            }else if(this.status >= 400){ // status of 400 and above are error codes, fire failsafe on error
+                goFailsafe();
+            }
+        }
+    };
+    xhttp.open("GET", url, true);
+    xhttp.send();
+}
+
+// Call JSONP type feed via appending script call to document head
+function callJSONP(url){
+    var dataFeed = document.createElement('script');
+    dataFeed.src = url;
+    dataFeed.type = "text/javascript";
+    dataFeed.id = "dataFeed";
+    dataFeed.charset = "utf-8";
+    dataFeed.async = false;
+    document.getElementsByTagName("head")[0].appendChild(dataFeed);
+}
+// JSONP callback function
+// This function name must match the JSONP feed callback function name.
+function iqCallback(data){
+    handleReturnedFeedData(data);
+}
+
+// Handle data returned by whichever version of the feed is currently in use
+function handleReturnedFeedData(data){
+    // Clear failsafe timeout on data received
+    window.clearTimeout(feedCallBackFailsafeTimer);
+
+    // If returned data is empty call failsafe
+    if(data !== null && typeof data !== "undefined"){
+        populateConfigObjArticleFramesWithFeedData(data);
+        goCreative();
+    }else{
+        goFailsafe();
+    }
+}
+
+// Populate creativeConfigObj.articleFrames with dynamic portions of articles retrieved from feed.
+// Feed data passed to this function can be in the form of JSON or XML
+
+
+/*reiniel*/
+
+function populateConfigObjArticleFramesWithFeedData(data){
+    var dataArray = null;
+
+    // The below is hard coded to pull specific data from pre determined feed nodes
+    // Any adjustments to the organization of the feeds requires revising the below to match
+    if(creativeConfigObj.feedVersion === "xml"){
+        dataArray = data.getElementsByTagName("item");
+
+        for(var i=0; i<creativeConfigObj.articleFrames.length; i++){
+            creativeConfigObj.articleFrames[i].headline = {copy:dataArray[i].getElementsByTagName("promotionalHeadline")[0].childNodes[0].nodeValue, color: "#FFF"};
+            creativeConfigObj.articleFrames[i].url = dataArray[i].getElementsByTagName("link")[0].childNodes[0].nodeValue;
+            creativeConfigObj.articleFrames[i].descriptor = {copy:dataArray[i].getElementsByTagName("description")[0].childNodes[0].nodeValue, color: "#FFF"};
+        }
+    }else{
+        dataArray = (creativeConfigObj.feedVersion === "xml_jsonp_mirror")?data["rss"]["channel"]["item"]:data["data"]["anyWorks"];
+
+        for(var i=0; i<creativeConfigObj.articleFrames.length; i++){
+           
+              creativeConfigObj.articleFrames[i].headline = {copy :(creativeConfigObj.feedVersion === "xml_jsonp_mirror")?dataArray[i]["promotionalHeadline"]["$t"]:dataArray[i]["promotionalHeadline"], color: "#FFF"};
+              
+              var rei = creativeConfigObj.articleFrames[i].logo.url = (creativeConfigObj.feedVersion === "xml_jsonp_mirror")?dataArray[i]['promotionalMedia']["$t"]:dataArray[i]['promotionalMedia']['crops'][0]['renditions'][0]['url']; 
+             
+              creativeConfigObj.articleFrames[i].url = (creativeConfigObj.feedVersion === "xml_jsonp_mirror")?dataArray[i]["link"]["$t"]:dataArray[i]["url"]; 
+             
+             
+            /* creativeConfigObj.articleFrames[i].descriptor = {copy :(creativeConfigObj.feedVersion === "xml_jsonp_mirror")?dataArray[i]["description"]["$t"]:dataArray[i]["abstract"], color: "#FFF"}; */
+             
+        
+        if (dataArray[i]['promotionalMedia']['__typename'] !== "Image") {
+
+            /*do something here*/
+        }     
+
+
+       console.log(rei); 
+
+       /*console.log(creativeConfigObj.articleFrames[i]);*/
+      
+       /*console.log(creativeConfigObj.articleFrames.length);*/
+       
+       /*console.log(t)*/
+     
+       
+
+
+       /* CURRENT WAY TO PULL IMAGES */
+       /*console.log(dataArray[i]['promotionalMedia']['crops'][0]['renditions'][0]); */
+
+       /* TO PULL THE HEADLINE */
+       /* creativeConfigObj.articleFrames[i].headline = {copy :(creativeConfigObj.feedVersion === "xml_jsonp_mirror")?dataArray[i]["title"]["$t"]:dataArray["anyWork"]["headline"]["default"], color: "#FFF"};*/
+
+       /* TO PULL IMAGES 
+       /*"creativeConfigObj.articleFrames[i].headline = {copy :(creativeConfigObj.feedVersion === 'xml_jsonp_mirror')?dataArray[i]['title']['$t']:dataArray['anyWork']['promotionalMedia']['crops'][2]['renditions'][0]['url']"*/
+
+
+       
+        }
+    }
+}
+
+
+
+ 
+
+/*-----> SET UP <-----*/
+
+// Call this function on data feed fail or invalid response to populate backup default.
+// This functio will set the creative content to display none and set the failsafe container to display block.
+// The failsafe has a single clickout.
+// Adjust the replacement backup content as desired here.
+function goFailsafe(){
+    try{window.clearTimeout(feedCallBackFailsafeTimer);}catch(err){};
+    document.getElementById("contentContainer").style.display = "none";
+
+    document.getElementById("failsafeContainer").style.display = "block";
+    document.getElementById("failsafeContainer").style.visibility = "visible";
+    document.getElementById("failsafeContainer").addEventListener("click", onFailsafeClk, false);
+
+    document.getElementById("mobileFailsafe").style.backgroundImage = "url(" + creativeConfigObj.failsafeMobileImageURL + ")";
+    document.getElementById("desktopFailsafe").style.backgroundImage = "url(" + creativeConfigObj.failsafeDesktopImageURL + ")";
+    document.getElementById("desktopFailsafe").style.backgroundPosition = "center";
+}
+
+function goCreative(){
+    document.getElementById("contentContainer").style.display = "block";
+
+    setCreativeElements();
+    positionCreativeElements();
+    addEventListeners();
+
+    window.setTimeout(function(e){
+        document.getElementById("contentContainer").style.visibility = "visible";
+        introAnim();
+    }, 250);
+}
+
+
+function setCreativeElements(){
+    //set frames
+    createFrames(creativeConfigObj.heroFrame, creativeConfigObj.articleFrames);
+}
+
+function positionCreativeElements(){
+    window.setTimeout(function(e){
+        trimAllCopyOfClass("article_headline", 4);
+        trimAllCopyOfClass("article_descriptor", 2);
+    }, 10);
+}
+
+function trimAllCopyOfClass(clsName, maxLines){
+    var clsArr = document.getElementsByClassName(clsName);
+    for (var i=0; i<clsArr.length; i++){
+        trimCopy(clsArr[i], maxLines);
+    }
+}
+
+function trimCopy(div, maxLines){
+    // Breakout counter to aviod getting stuck in while statement
+    var breakOutCounter = 0;
+    var breakOutCount = 1000;
+
+    var maxHeight = null;
+
+    var divWidth = div.offsetWidth;
+    var divHeight = div.offsetHeight;
+    var divStyles = window.getComputedStyle(div);
+    var divCopy = div.innerHTML;
+
+    // Create dummy copy using samefont/text styles to measure actual height of a single line on stage
+    var dummyDiv = document.createElement("div");
+    dummyDiv.id = "testDiv";
+    dummyDiv.innerHTML = "TEST";
+    dummyDiv.style.position = "absolute";
+    dummyDiv.style.top = "-1000%";
+    dummyDiv.style.left = "-1000%";
+    dummyDiv.style.visibility = "hidden";
+    dummyDiv.style.fontFamily = divStyles["font-family"];
+    dummyDiv.style.fontSize = divStyles["font-size"];
+    dummyDiv.style.lineHeight = divStyles["line-height"];
+    dummyDiv.style.letterSpacing = divStyles["letter-spacing"];
+    dummyDiv.style.wordSpacing = divStyles["word-spacing"];
+    dummyDiv.style.textDecoration = divStyles["text-decoration"];
+    dummyDiv.style.fontStyle = divStyles["font-style"];
+    dummyDiv.style.fontWeight = divStyles["font-weight"];
+    div.parentNode.appendChild(dummyDiv);
+
+    // Set max height (line height x total lines)
+    maxHeight = (dummyDiv.offsetHeight * maxLines);
+
+    // If copy exceeds max height start taking off one letter at a time untill acceptable height is acheived
+    if(divHeight > maxHeight){
+        while(divHeight > maxHeight){
+            divCopy = div.innerHTML = divCopy.substring(0, (divCopy.length - 1));
+            divHeight = div.offsetHeight;
+
+            breakOutCounter++;
+            if(breakOutCounter >= breakOutCount){
+                console.log("trimCopy function error.  Function exited.");
+                break;
+            }
+        }
+
+        // Trim whitespace and add ellipses
+        div.innerHTML = divCopy.trim() + "...";
+        divHeight = div.offsetHeight;
+
+        // Reset breakout counter and reduce breakout count as max char overage should not exceed the 3 added characters
+        breakOutCounter = 0;
+        breakOutCount = 4;
+
+        // If additional characters pushed height over the limit repeat trim & measure again untill acceptable height is acheived
+        if(divHeight > maxHeight){
+            while(divHeight > maxHeight){
+                divCopy = div.innerHTML = divCopy.substring(0, (divCopy.length - 4)).trim() + "...";
+                divHeight = div.offsetHeight;
+
+                breakOutCounter++;
+                if(breakOutCounter >= breakOutCount){
+                    console.log("trimCopy function error.  Function exited.");
+                    break;
+                }
+            }
+        }
+    }
+}
+
+function addEventListeners(){
+    document.getElementById("mobileLeftArrowBtn").addEventListener("click", onMobileLeftArrowClk, false);
+    document.getElementById("mobileRightArrowBtn").addEventListener("click", onMobileRightArrowClk, false);
+
+    // IE is blocking the article click behind the desktop navigation arrow garident areas.
+    // The below code is part of a workaround to achieve the standard desired behaviour on IE10.
+    if(isIE10 === true){
+        var ie10HitAreas = document.getElementsByClassName("ie10HitArea");
+        for(var i=0; i<ie10HitAreas.length; i++){
+            ie10HitAreas[i].style.display = "block";
+        }
+
+        /*document.getElementById("desktopLeftArrowContainer").addEventListener("mouseenter", showDesktopLeftNav, false);*/
+        /*document.getElementById("desktopLeftArrowContainer").addEventListener("mouseleave", hideDesktopLeftNav, false);*/
+
+        document.getElementById("desktopLeftArrowContainer").style.pointerEvents = "auto";
+        document.getElementById("desktopRightArrowContainer").style.pointerEvents = "auto";
+
+        document.getElementById("desktopLeftArrowContainerIE10HitArea").addEventListener("click", onIE10LeftArrowContainerClk, false);
+        document.getElementById("desktopRightArrowContainerIE10HitArea").addEventListener("click", onIE10RightArrowContainerClk, false);
+    }else{
+        document.getElementById("desktopLeftArrowBtn").addEventListener("mouseenter", showDesktopLeftNav, false);
+        /*document.getElementById("desktopLeftArrowBtn").addEventListener("mouseleave", hideDesktopLeftNav, false);*/
+    }
+
+    document.getElementById("desktopLeftArrowBtn").addEventListener("click", onDesktopLeftArrowClk, false);
+    document.getElementById("desktopRightArrowBtn").addEventListener("click", onDesktopRightArrowClk, false);
+    document.getElementById("mobileFooterHitArea").addEventListener("click", onMobileFrameClk, false);
+
+    var bgClks = document.getElementsByClassName("genClk");
+    for(var i=0; i<bgClks.length; i++){
+        bgClks[i].addEventListener("click", onBgClk, false);
+    }
+}
+
+
+/*-----> FRAMES <-----*/
+function createFrames(heroFrameObj, articleFramesObj){
+    createFramesMobile(heroFrameObj, articleFramesObj);
+    createFramesDesktop(heroFrameObj, articleFramesObj);
+}
+
+function createFramesMobile(heroFrameObj, articleFramesObj){
+    var frameNum = 1; // Start frameNum at 1 as mobile Hero is contained in gallery
+    var avatarImageArray = [];
+
+    // Mobile Hero frame is included in gallery, thus frameNum should be "1"
+    document.getElementById("mobileGallery").appendChild(createHeroFrame(frameNum, "mobile", heroFrameObj.backgroundImageURL.mobile, heroFrameObj.kicker, heroFrameObj.headline, heroFrameObj.descriptor, heroFrameObj.logo));
+
+    for(var i=0; i<articleFramesObj.length; i++){
+        frameNum++;
+
+        document.getElementById("mobileGallery").appendChild(createArticleFrame(frameNum, "mobile", articleFramesObj[i].kicker, articleFramesObj[i].headline, articleFramesObj[i].descriptor,  articleFramesObj[i].cta, articleFramesObj[i].logo));
+    }
+    mobileTotalGalleryFrames = frameNum;
+
+    createNavDots(mobileTotalGalleryFrames);
+    
+}
+
+// NAV CODE FOR MOBILE
+function createNavDots(totalNumDots){
+    var totalDotsIsEvemNum = (totalNumDots%2 === 0)?true:false;
+
+    for(var i=0; i<totalNumDots; i++){
+        document.getElementById("navDots").appendChild(createNavDot(i+1));
+    }
+    document.getElementsByClassName("navDot")[0].className = "navDot navDotActive";
+}
+
+function createNavDot(dotNum){
+    var dot = document.createElement("div");
+    dot.id = "navDot_" + dotNum;
+    dot.className = "navDot navDotInactive";
+
+    return dot;
+}
+
+function createFramesDesktop(heroFrameObj, articleFramesObj){
+    var frameNum = 0; // Start frameNum at 0 as desktop Hero is contained outside of gallery in static container
+
+    // Desktop Hero frame set to it's own containe outside of gallery
+    // Desktop Hero remains on stage at all times
+    document.getElementById("desktopHeroContainer").appendChild(createHeroFrame(frameNum, "desktop", heroFrameObj.backgroundImageURL.desktop, heroFrameObj.kicker, heroFrameObj.headline, heroFrameObj.descriptor, heroFrameObj.logo));
+
+    // Desktop gallery contains articles only
+    for(var i=0; i<articleFramesObj.length; i++){
+        frameNum++;
+
+        document.getElementById("desktopGallery").appendChild(createArticleFrame(frameNum, "desktop", articleFramesObj[i].kicker, articleFramesObj[i].headline, articleFramesObj[i].descriptor,  articleFramesObj[i].cta, articleFramesObj[i].logo));
+    }
+    desktopTotalGalleryFrames = frameNum;
+
+    populateDesktopGalleryFramePosArr(desktopTotalGalleryFrames);
+
+    createNavDots2(desktopTotalGalleryFrames); 
+}
+
+//FOR DESKTOP NAV DOTS
+
+function createNavDots2(totalNumDots){
+    var totalDotsIsEvemNum = (totalNumDots%2 === 0)?true:false;
+
+    for(var i=0; i<totalNumDots; i++){
+        document.getElementById("navDots2").appendChild(createNavDot2(i+1));
+    }
+    document.getElementsByClassName("navDot2")[0].className = "navDot2 navDotActive";
+}
+
+function createNavDot2(dotNum){
+    var dot2 = document.createElement("div");
+    dot2.id = "navDotD_" + dotNum;
+    dot2.className = "navDot2 navDotInactive";
+
+    return dot2;
+}
+
+
+
+// desktopGalleryFramePosArr is used for desktop only
+// desktopGalleryFramePosArr will be used/updated in the gallery animation functions
+function populateDesktopGalleryFramePosArr(totalNumFrames){
+    for(var i=0; i<totalNumFrames; i++){
+        desktopGalleryFramePosArr.push("desktop_frame_" + (i+1));
+    }
+
+    // position the last frame to the left of the gallery for smooth animation on nav to previous
+    document.getElementById(desktopGalleryFramePosArr[desktopGalleryFramePosArr.length-1]).style.webkitTransform = "translateX(calc(-100%)";
+    document.getElementById(desktopGalleryFramePosArr[desktopGalleryFramePosArr.length-1]).style.transform = "translateX(-100%)";
+
+    // Shift desktopTotalGalleryFrames forward once to match positions
+    updateDesktopGalleryPosTrackerArr("prev");
+}
+
+// Hero "frameNum" should be "0" when excluded from gallery or "1" when included in gallery
+// Be sure to start off article gallery frames with Hero frameNum + 1
+function createHeroFrame(frameNum, layout, bgImgURL, kicker, headline, descriptor, logo){
+    var frame = document.createElement("div");
+    frame.id = layout + "_frame_" + frameNum;
+    frame.className = "frame";
+    frame.style.backgroundImage = "url(" + bgImgURL + ")";
+    frame.style.width = "100%";
+
+    var frameGrad = document.createElement("div");
+    frameGrad.id = layout + "_frame_" + frameNum + "_grad";
+    frameGrad.className = "grad";
+    frame.appendChild(frameGrad);
+
+    var frameCopyContainer = document.createElement("div");
+    frameCopyContainer.id = layout + "_frame_" + frameNum + "_copy_container";
+    frameCopyContainer.className = "hero_copyContainer";
+    frame.appendChild(frameCopyContainer);
+
+    var frameKicker = document.createElement("div");
+    frameKicker.id = layout + "_frame_" + frameNum + "_kicker";
+    frameKicker.className = "hero_kicker";
+    frameKicker.innerHTML = kicker.copy;
+    if(kicker.color !== "" && kicker.color !== null){frameKicker.style.color = kicker.color;}
+    frameCopyContainer.appendChild(frameKicker);
+
+    var frameHeadline = document.createElement("div");
+    frameHeadline.id = layout + "_frame_" + frameNum + "_headline";
+    frameHeadline.className = "hero_headline";
+    frameHeadline.innerHTML = headline.copy;
+    if(headline.color !== "" && headline.color !== null){frameHeadline.style.color = headline.color;}
+    frameCopyContainer.appendChild(frameHeadline);
+
+    if(descriptor !== "" && descriptor !== null){
+        var frameDescriptor = document.createElement("div");
+        frameDescriptor.id = layout + "_frame_" + frameNum + "_descriptor";
+        frameDescriptor.className = "hero_descriptor";
+        frameDescriptor.innerHTML = descriptor.copy;
+        if(descriptor.color !== "" && descriptor.color !== null){frameDescriptor.style.color = descriptor.color;}
+        frameCopyContainer.appendChild(frameDescriptor);
+    }
+
+    var frameClk = document.createElement("div");
+    frameClk.id = layout + "_frame_" + frameNum + "_click";
+    frameClk.className = "frameClk";
+    if(layout === "mobile"){
+        frameClk.addEventListener("click", onMobileFrameClk, false);
+    }else{
+        frameClk.addEventListener("click", onHeroFrameClk, false);
+    }
+    frame.appendChild(frameClk);
+
+    var frameLogoContainer = document.createElement("div");
+    frameLogoContainer.id = layout + "_frame_" + frameNum + "_logo";
+    frameLogoContainer.className = "hero_logo";
+    frameLogoContainer.addEventListener("click", onHeroLogoClk, false);
+    frame.appendChild(frameLogoContainer);
+
+    var frameLogo = document.createElement("img");
+    frameLogo.id = layout + "_frame_" + frameNum + "_logoImg";
+    frameLogo.src = logo.url;
+    frameLogoContainer.appendChild(frameLogo);
+
+    return frame;
+}
+
+function createArticleFrame(frameNum, layout, kicker, headline, descriptor, cta, logo){
+    var desktopGalleryFrameWidth = "172.3px";
+    var desktopGalleryFrameHeight = "186.4px";
+    // var desktopGalleryFrameMraginLeft = "10px"; 
+    // var displayline = "inline-block"; 
+  
+
+    var frame = document.createElement("div");
+    frame.id = layout + "_frame_" + frameNum;
+    frame.className = "frame";
+    if(layout === "desktop"){
+        
+        frame.style.width = desktopGalleryFrameWidth;
+        frame.style.height = desktopGalleryFrameHeight; 
+        // frame.style.marginLeft = desktopGalleryFrameMraginLeft; 
+        // frame.style.display = displayline; 
+
+
+        // Left navigation arrow should fade in on mouse hover over the first two left most article frames.
+        // Add hover listeners to first two left most articles
+        // Add attribure to track listeners status of articles & for update on article navigation
+        
+        
+        if(frameNum === 1 || frameNum === 2){
+             frame.addEventListener("mouseenter", showDesktopLeftNav, false);
+            frame.addEventListener("mouseleave", hideDesktopLeftNav, false);
+            frame.setAttribute("activateNavigationArrow", "true"); 
+        }else{
+             frame.setAttribute("activateNavigationArrow", "false"); 
+        }
+    }
+
+   
+   
+   
+    if(layout === "mobile"){
+        if(frameNum >= 2){
+            frame.style.webkitTransform = "translateX(100%)";
+            frame.style.transform = "translateX(100%)";
+        }
+    }else{
+        frame.style.webkitTransform = "translateX(" + ((frameNum-1)*100) + "%)";
+        frame.style.transform = "translateX(" + ((frameNum-1)*100) + "%)";
+
+        frame.style.webkitTransition = "-webkit-transform .25s ease";
+        frame.style.transition = "-webkit-transform .25s ease";
+        frame.style.transition = "transform .25s ease";
+        frame.style.transition = "transform .25s ease, -webkit-transform .25s ease";
+    }
+
+    var frameLogoContainer = document.createElement("div");
+    frameLogoContainer.id = layout + "_frame_" + frameNum + "_logo";
+    frameLogoContainer.className = "article_logo";
+    frameLogoContainer.style.height = (layout === "mobile")?logo.mobileHeight:logo.desktopHeight;
+    frame.appendChild(frameLogoContainer);
+
+    var frameLogo = document.createElement("img");
+    frameLogo.id = layout + "_frame_" + frameNum + "_logoImg";
+    frameLogo.className = "article_logoImg";
+    frameLogo.src = logo.url;
+    frameLogo.style.height = (layout === "mobile")?logo.mobileHeight:logo.desktopHeight;
+    frameLogoContainer.appendChild(frameLogo);
+
+
+    var frameGrad = document.createElement("div");
+    frameGrad.id = layout + "_frame_" + frameNum + "_grad";
+    frameGrad.className = "grad";
+    frame.appendChild(frameGrad);
+
+    var frameCopyContainer = document.createElement("div");
+    frameCopyContainer.id = layout + "_frame_" + frameNum + "_copy_container";
+    frameCopyContainer.className = "article_copyContainer";
+    if(layout === "mobile"){
+        frameCopyContainer.style.maxHeight = "calc(100% - 98px - " + logo.height + ")"; // 98 = (15px margin top + 15px margin bottom + 50px footer + 18px spacing from logo bottom per comps)
+    }else{
+        frameCopyContainer.style.maxHeight = "calc(100% - 68px - " + logo.height + ")"; // 68 = (25px margin top + 25px margin bottom + 18px spacing from logo bottom per comps)
+    }
+    frame.appendChild(frameCopyContainer);
+
+    var frameKicker = document.createElement("div");
+    frameKicker.id = layout + "_frame_" + frameNum + "_kicker";
+    frameKicker.className = "article_kicker";
+    frameKicker.innerHTML = (layout === "mobile")?kicker.copy + " | The New York Times":"The New York Times";
+    if(kicker.color !== "" && kicker.color !== null){frameKicker.style.color = kicker.color;}
+    frameCopyContainer.appendChild(frameKicker);
+
+
+
+    var frameHeadline = document.createElement("div");
+    frameHeadline.id = layout + "_frame_" + frameNum + "_headline";
+    frameHeadline.className = "article_headline";
+    frameHeadline.innerHTML = headline.copy;
+    if(headline.color !== "" && headline.color !== null){frameHeadline.style.color = headline.color;}
+    frameCopyContainer.appendChild(frameHeadline);
+
+
+    if(layout === "mobile" && descriptor !== "" && descriptor !== null && typeof descriptor !== "undefined"){
+        var frameDescriptor = document.createElement("div");
+        frameDescriptor.id = layout + "_frame_" + frameNum + "_descriptor";
+        frameDescriptor.className = "article_descriptor";
+        frameDescriptor.innerHTML = descriptor.copy;
+        if(descriptor.color !== "" && descriptor.color !== null){frameDescriptor.style.color = descriptor.color;}
+        frameCopyContainer.appendChild(frameDescriptor);
+    }
+
+
+    var frameClk = document.createElement("div");
+    frameClk.id = layout + "_frame_" + frameNum + "_click";
+    frameClk.className = "frameClk";
+    if(layout === "mobile"){
+        frameClk.addEventListener("click", onMobileFrameClk, false);
+    }else{
+        frameClk.addEventListener("click", function(e){
+            onDesktopFrameClk(frameNum);
+        }, false);
+    }
+    frame.appendChild(frameClk);
+
+    var frameCta = document.createElement("div");
+    frameCta.id = layout + "_frame_" + frameNum + "_cta";
+    frameCta.className = "article_cta";
+    frameCta.innerHTML = cta.copy;
+    if(cta.color !== "" && cta.color !== null){frameCta.style.color = cta.color;}
+    frameCopyContainer.appendChild(frameCta);
+
+    return frame;
+}
+
+/*-----> MOBILE NAV <-----*/
+function mobileGoPrevFrame(){
+    var nextFrame = mobileCurrentGalleryFrame - 1;
+
+	if(nextFrame < 1){
+		nextFrame = mobileTotalGalleryFrames;
+	}
+
+    document.getElementById("mobile_frame_" + nextFrame).style.WebkitAnimation = "mobileFrameOnFromLeft .25s ease forwards";
+    document.getElementById("mobile_frame_" + nextFrame).style.animation = "mobileFrameOnFromLeft .25s ease forwards";
+
+    document.getElementById("mobile_frame_" + mobileCurrentGalleryFrame).style.WebkitAnimation = "mobileFrameOffToRight .25s ease forwards";
+    document.getElementById("mobile_frame_" + mobileCurrentGalleryFrame).style.animation = "mobileFrameOffToRight .25s ease forwards";
+
+    mobileCurrentGalleryFrame = nextFrame;
+    updateNavDots(mobileCurrentGalleryFrame);
+}
+function mobileGoNextFrame(){
+    var nextFrame = mobileCurrentGalleryFrame + 1;
+
+    if(nextFrame > mobileTotalGalleryFrames){
+        nextFrame = 1;
+    }
+
+	document.getElementById("mobile_frame_" + nextFrame).style.WebkitAnimation = "mobileFrameOnFromRight .25s ease forwards";
+	document.getElementById("mobile_frame_" + nextFrame).style.animation = "mobileFrameOnFromRight .25s ease forwards";
+
+	document.getElementById("mobile_frame_" + mobileCurrentGalleryFrame).style.WebkitAnimation = "mobileFrameOffToLeft .25s ease forwards";
+	document.getElementById("mobile_frame_" + mobileCurrentGalleryFrame).style.animation = "mobileFrameOffToLeft .25s ease forwards";
+
+	mobileCurrentGalleryFrame = nextFrame;
+    updateNavDots(mobileCurrentGalleryFrame);
+}
+
+function updateNavDots(frame){
+    document.getElementsByClassName("navDotActive")[0].className = "navDot navDotInactive";
+    document.getElementById("navDot_" + frame).className = "navDot navDotActive";
+}
+
+
+
+/*-----> DESKTOP NAV <-----*/
+
+
+// rArrow.addEventListener("click", function(){
+
+// document.querySelector("leftArrowBtn").style.display = "none"; 
+
+// console.log("this is working"); 
+
+// }); 
+
+
+
+
+
+
+function setLeftNavActive(){
+    document.getElementById("desktopLeftArrowContainer").style.display = "block"; 
+    
+}
+
+function setLeftNavInactive(){
+    document.getElementById("desktopLeftArrowContainer").style.display = "block"; 
+    
+}
+
+function desktopGoPrevFrame(){
+    var nextFrame = desktopCurrentGalleryFrame - 1;
+
+	if(nextFrame < 1){
+		nextFrame = desktopTotalGalleryFrames;
+	}
+
+    desktopGalleryAnimate("prev");
+
+	desktopCurrentGalleryFrame = nextFrame;
+    updateNavDots2(desktopCurrentGalleryFrame);
+}
+
+
+function desktopGoNextFrame(){
+    var nextFrame = desktopCurrentGalleryFrame + 1;
+
+    if(nextFrame > desktopTotalGalleryFrames){
+        nextFrame = 1;
+    }
+
+    desktopGalleryAnimate("next");
+
+    desktopCurrentGalleryFrame = nextFrame;
+    updateNavDots2(desktopCurrentGalleryFrame);
+
+
+}
+
+
+function updateNavDots2(frame){
+    document.getElementsByClassName("navDotActive")[1].className = "navDot2 navDotInactive";
+    document.getElementById("navDotD_" + frame).className = "navDot2 navDotActive";
+}
+
+
+
+
+
+function updateDesktopGalleryPosTrackerArr(navDirection){
+    var temp;
+
+    if(navDirection === "next"){
+        temp = desktopGalleryFramePosArr.shift();
+        desktopGalleryFramePosArr.push(temp);
+    }else if(navDirection === "prev"){
+        temp = desktopGalleryFramePosArr.pop();
+        desktopGalleryFramePosArr.unshift(temp);
+    }else{
+        console.log("updateDesktopGalleryPosTrackerArr \"navDirection\" parameter invalid!");
+    }
+}
+
+function desktopGalleryAnimate(navDirection){
+    var newStagePos = 0;    // calculated position to translate gallery frame to
+    var arr = desktopGalleryFramePosArr;
+
+    // trave per move will be equal to the common width of the gallery frames
+    var travel = document.getElementById(arr[0]).offsetWidth;
+
+    updateDesktopGalleryPosTrackerArr(navDirection);
+
+    for(var i=0; i<arr.length; i++){
+        newStagePos = (i-1);
+        document.getElementById(arr[i]).style.zIndex = "10";
+
+        if(navDirection === "next"){
+            if(newStagePos === arr.length-2){
+                document.getElementById(arr[i]).style.zIndex = "0";
+            }
+        }else{
+            if(newStagePos === -1){
+                document.getElementById(arr[i]).style.zIndex = "0";
+            }
+        }
+
+        setNewPos(arr[i], newStagePos);
+    }
+
+    function setNewPos(elemID, pos){
+        var elem = document.getElementById(elemID);
+        elem.style.webkitTransform = "translateX(" + (pos*100) + "%)";
+        elem.style.transform = "translateX(" + (pos*100) + "%)";
+
+        // Left navigation arrow should fade in on mouse hover over the first two left most article frames.
+        // Update mouse enter listeners to only be attached to the left most two article frames.
+        if(pos === 0 || pos === 1){
+            elem.addEventListener("mouseenter", showDesktopLeftNav, false);
+            elem.addEventListener("mouseleave", hideDesktopLeftNav, false);
+            elem.setAttribute("activateNavigationArrow", "true");
+        }else if(elem.getAttribute("activateNavigationArrow") === "true"){
+            elem.setAttribute("activateNavigationArrow", "false");
+            elem.removeEventListener("mouseenter", showDesktopLeftNav, false);
+            /*elem.removeEventListener("mouseleave", hideDesktopLeftNav, false);*/
+        }
+    }
+}
+
+function introAnim(){
+    // Add listener to kill animation on UI
+    document.addEventListener("mousedown", setStopAnim, false);
+
+    var stopAnim = true;
+    var count = 0;
+    var totalSteps = 3;
+
+    function goNext(){
+        if(stopAnim == true){return;}
+        count ++;
+        desktopGoNextFrame();
+
+        if(count < totalSteps){
+            window.setTimeout(goNext, 600);
+        }
+    }
+
+    function setStopAnim(e){
+        document.removeEventListener("mousedown", setStopAnim, false);
+        stopAnim = true;
+    }
+
+    window.setTimeout(goNext, 250);
+}
+
+/*-----> TRACKING <-----*/
+function fireNounTracking(interaction, noun){
+    // MDX 2.0 and MDX NXT use different noun tracking URLs
+    // The below will auto detect which platform the unit is running and set the appropriate base URL
+    var isNXT = (adId.toString().length >= 10);
+    var baseURL = (isNXT)?"https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=19&mc=imp&pli=16478984&PluID=0&ord=%time%&rtu=-1&pcp=$$adID=" + adId + "|vId=" + versionID + "|interactionName=" : "https://bs.serving-sys.com/Serving/adServer.bs?cn=display&c=19&pli=1073952795&adid=1073972634&ord=[timestamp]&rtu=-1&pcp=$$adID=" + adId + "|vID=" + versionID + "|interactionName=";
+
+    var pixel = new Image();
+    pixel.src = baseURL + interaction + "|noun=" + noun + "$$";
+
+    try{
+        if(localPreview === true){
+            console.log(baseURL + interaction + "|noun=" + noun + "$$");
+        }
+    }catch(err){}
+}
+
+/*-----------------------------*/
+/*-----> EVENT LISTENERS <-----*/
+/*-----------------------------*/
+function showDesktopLeftNav(e){
+    setLeftNavActive();
+}
+
+function hideDesktopLeftNav(e){
+    setLeftNavActive();
+}
+
+
+/*-----> NAV CLICKS <-----*/
+function onMobileLeftArrowClk(e){
+    EB.userActionCounter('Previous_Frame');
+    mobileGoPrevFrame();
+}
+function onMobileRightArrowClk(e){
+    EB.userActionCounter('Next_Frame');
+    mobileGoNextFrame();
+}
+function onDesktopLeftArrowClk(e){
+    EB.userActionCounter('Previous_Frame');
+    desktopGoPrevFrame();
+}
+function onDesktopRightArrowClk(e){
+    EB.userActionCounter('Next_Frame');
+    desktopGoNextFrame();
+}
+
+
+/*-----> CLICK OUTS <-----*/
+function onHeroLogoClk(e){
+    EB.clickthrough('Hero_Logo_Click');
+}
+
+function onBgClk(e){
+    EB.clickthrough('Background_Click');
+}
+
+function onHeroFrameClk(e){
+    EB.clickthrough('Hero_Frame_Click');
+}
+
+function onFailsafeClk(e){
+    EB.clickthrough('Failsafe_Click');
+}
+
+
+//**************** NOTE ****************//
+// The following switch case statments must be updated if the number of available article frames is updated
+// Not following this rule will result in reporting errors
+//**************************************//
+
+// Hero frame is included in mobile gallery and must be accounted for in the below switch case
+function onMobileFrameClk(e){
+    switch(mobileCurrentGalleryFrame){
+        case 1:
+            EB.clickthrough('Hero_Frame_Click');
+            break;
+        case 2:
+            fireNounTracking('Article_Frame_1_Click', creativeConfigObj.articleFrames[0].url);
+            EB.clickthrough('Article_Frame_1_Click', creativeConfigObj.articleFrames[0].url);
+            break;
+        case 3:
+            fireNounTracking('Article_Frame_2_Click', creativeConfigObj.articleFrames[1].url);
+            EB.clickthrough('Article_Frame_2_Click', creativeConfigObj.articleFrames[1].url);
+            break;
+        case 4:
+            fireNounTracking('Article_Frame_3_Click', creativeConfigObj.articleFrames[2].url);
+            EB.clickthrough('Article_Frame_3_Click', creativeConfigObj.articleFrames[2].url);
+            break;
+        case 5:
+            fireNounTracking('Article_Frame_4_Click', creativeConfigObj.articleFrames[3].url);
+            EB.clickthrough('Article_Frame_4_Click', creativeConfigObj.articleFrames[3].url);
+            break;
+        case 6:
+            fireNounTracking('Article_Frame_5_Click', creativeConfigObj.articleFrames[4].url);
+            EB.clickthrough('Article_Frame_5_Click', creativeConfigObj.articleFrames[4].url);
+            break;
+        case 7:
+            fireNounTracking('Article_Frame_6_Click', creativeConfigObj.articleFrames[5].url);
+            EB.clickthrough('Article_Frame_6_Click', creativeConfigObj.articleFrames[5].url);
+            break;
+        default:
+    }
+}
+
+// Hero frame is not included in desktop gallery
+// Not technically an event listener function.  Placed here for ease of updates.
+function onDesktopFrameClk(frameNum){
+    switch(frameNum){
+        case 1:
+            fireNounTracking('Article_Frame_1_Click', creativeConfigObj.articleFrames[0].url);
+            EB.clickthrough('Article_Frame_1_Click', creativeConfigObj.articleFrames[0].url);
+            break;
+        case 2:
+            fireNounTracking('Article_Frame_2_Click', creativeConfigObj.articleFrames[1].url);
+            EB.clickthrough('Article_Frame_2_Click', creativeConfigObj.articleFrames[1].url);
+            break;
+        case 3:
+            fireNounTracking('Article_Frame_3_Click', creativeConfigObj.articleFrames[2].url);
+            EB.clickthrough('Article_Frame_3_Click', creativeConfigObj.articleFrames[2].url);
+            break;
+        case 4:
+            fireNounTracking('Article_Frame_4_Click', creativeConfigObj.articleFrames[3].url);
+            EB.clickthrough('Article_Frame_4_Click', creativeConfigObj.articleFrames[3].url);
+            break;
+        case 5:
+            fireNounTracking('Article_Frame_5_Click', creativeConfigObj.articleFrames[4].url);
+            EB.clickthrough('Article_Frame_5_Click', creativeConfigObj.articleFrames[4].url);
+            break;
+        case 6:
+            fireNounTracking('Article_Frame_6_Click', creativeConfigObj.articleFrames[5].url);
+            EB.clickthrough('Article_Frame_6_Click', creativeConfigObj.articleFrames[5].url);
+            break;
+        default:
+    }
+}
+//************** NOTE END **************//
+
+// For use with IE 10 only
+function onIE10LeftArrowContainerClk(e){
+    onDesktopFrameClk(desktopCurrentGalleryFrame);
+}
+
+// For use with IE 10 only
+function onIE10RightArrowContainerClk(e){
+    var slotClicked;
+    var articleNum;
+
+    // The below code will return a number indicating the visible article slot the mouse pointer is over on click.
+    // This number does not correlate to the actual article frame number.  It will return a number from 0 to 3, zero being the leftmost visible article slot.
+    slotClicked = Math.floor(((document.getElementById("desktopContainer").offsetWidth - document.getElementById("desktopGallery").offsetLeft) - (e.target.clientWidth - e.offsetX)) / (document.getElementById("desktopGallery").offsetWidth / 4));
+
+    // Determine actual article frame occupying visible slot
+    articleNum = desktopCurrentGalleryFrame + slotClicked;
+    if(articleNum > desktopTotalGalleryFrames){
+        articleNum -= desktopTotalGalleryFrames;
+    }
+
+    // Fire off click out of actual article frame occupying the returned slot.
+    onDesktopFrameClk(articleNum);
+}
+
+/*------------------------------*/
+/*-----> HELPER FUNCTIONS <-----*/
+/*------------------------------*/
+// Items must be on stage prior to being passed to this function for proper alignemnt
+function verticalyAlignText(obj){
+	var parentContainerHeight 	= obj.parentNode.offsetHeight;
+	var copyContainerHeight		= obj.offsetHeight;
+	var pushMargin				= Math.floor((parentContainerHeight-copyContainerHeight)/2) + 'px';
+	obj.style.marginTop = pushMargin;
+}
+
+
+/*------------------------------*/
+/*-----> BASE FORMAT CODE <-----*/
+/*------------------------------*/
+/*******************
+UTILITIES
+*******************/
+function setCreativeVersion() {
+	sendMessage("setCreativeVersion", {
+		creativeId: creativeId + " - " + templateName,
+		creativeVersion: creativeVersion,
+		creativeLastModified: lastModified,
+		uid: uid
+	});
+}
+
+function onPageScroll(event) {
+	// use scrollPos anywhere to know the current x/y coordinates.
+	scrollPos.x = event.scrollXPercent;
+	scrollPos.y = event.scrollYPercent;
+}
+
+/*********************************
+HTML5 Event System - Do Not Modify
+*********************************/
+var listenerQueue;
+var creativeIFrameId;
+
+function sendMessage(type, data) {
+	//note: the message type we're sending is also the name of the function inside
+	//		the custom script's messageHandlers object, so the case must match.
+
+	if (!data.type) data.type = type;
+	EB._sendMessage(type, data);
+}
+
+function addCustomScriptEventListener(eventName, callback, interAd) {
+	listenerQueue = listenerQueue || {};
+	var data = {
+		uid: uid,
+		listenerId: Math.ceil(Math.random() * 1000000000),
+		eventName: eventName,
+		interAd: !!(interAd),
+		creativeIFrameId: creativeIFrameId
+	};
+	sendMessage("addCustomScriptEventListener", data);
+	data.callback = callback;
+	listenerQueue[data.listenerId] = data;
+	return data.listenerId;
+}
+
+function dispatchCustomScriptEvent(eventName, params) {
+	params = params || {};
+	params.uid = uid;
+	params.eventName = eventName;
+	params.creativeIFrameId = creativeIFrameId;
+	sendMessage("dispatchCustomScriptEvent", params);
+}
+
+function removeCustomScriptEventListener(listenerId) {
+	var params = {
+		uid: uid,
+		listenerId: listenerId,
+		creativeIFrameId: creativeIFrameId
+	};
+
+	sendMessage("removeCustomScriptEventListener", params);
+	if (listenerQueue[listenerId])
+		delete listenerQueue[listenerId];
+}
+
+function eventManager(event) {
+	var msg;
+
+	if (typeof event == "object" && event.data) {
+		msg = JSON.parse(event.data);
+
+	} else {
+		// this is safe frame.
+		msg = {
+			type: event.type,
+			data: event
+		};
+	}
+	if (msg.type && msg.data && (!uid || (msg.data.uid && msg.data.uid == uid))) {
+		switch (msg.type) {
+			case "sendCreativeId":
+				creativeIFrameId = msg.data.creativeIFrameId;
+				addCustomScriptEventListener('pageScroll', onPageScroll);
+				sendMessage("dispatchScrollPos", {
+					uid: uid
+				});
+				if (creativeContainerReady)
+					creativeContainerReady();
+				break;
+			case "eventCallback": // Handle Callback
+				var list = msg.data.listenerIds;
+				var length = list.length;
+				for (var i = 0; i < length; i++) {
+					try {
+						var t = listenerQueue[list[i]];
+						if (!t) continue;
+						t.callback(msg.data);
+					} catch (e) {}
+				}
+				break;
+		}
+	}
+}
+
+// NOTE: The message listener below, and more importantly eventManager portion, have
+//		 been commented out as the calls to the eventManager function are being pushed
+//		 in via the 2 bindings to EGB.pm, as seen in the initializeCreative function.
+//		 When the below was left in the code, while serving in MRAID, two calls per
+//		 event were being received.  With the below removed all environments now
+//		 receive only a single call per event.
+//		 This commented out code was not deleted to avoid accidental addition back
+//		 into the code by one not familiar with the template since it is boilerplate
+//		 code for the base custom format.
+// window.addEventListener("message", function() {
+// 	try {
+// 		eventManager.apply(this, arguments);
+// 	} catch (e) {}
+// }, false);
+
+/*************************************
+End HTML5 Event System - Do Not Modify
+*************************************/
+
+window.addEventListener("load", checkIfAdKitReady);
+
+// Notes
+
+// The below makes the left arrow turn white them the right ones clicked
+
+document.getElementsByClassName("rightArrowBtn")[1].addEventListener("click", function(){
+document.getElementsByClassName("leftArrow")[1].style.borderLeft = "1px solid white"; 
+document.getElementsByClassName("leftArrow")[1].style.borderTop = "1px solid white"; 
+});
+
+document.getElementsByClassName("rightArrowBtn")[0].addEventListener("click", function(){
+document.getElementsByClassName("leftArrow")[0].style.borderLeft = "1px solid white"; 
+document.getElementsByClassName("leftArrow")[0].style.borderTop = "1px solid white"; 
+});
+
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+
