@@ -1252,26 +1252,6 @@ var creativeConfigObj = {
 /*-----> END TEMPLATE CONFIG  <-----*/
 
 
-function populateConfigObjArticleFramesWithFeedData(data) {
-  console.log("populateConfigObjArticleFramesWithFeedData");
-  var numberOfItem = data.data.anyWorks.length;
-  totalNumberOfItem = numberOfItem;
-
-  for (var i = 0; i < numberOfItem; i++) {
-    creativeConfigObj.articleFrames[i].headline = {
-      copy: data.data.anyWorks[i].promotionalHeadline,
-      color: "#FFF"
-    };
-    creativeConfigObj.articleFrames[i].headline;
-    creativeConfigObj.articleFrames[i].url = data.data.anyWorks[i].url;
-    creativeConfigObj.articleFrames[i].logo.url = data.data.anyWorks[i].promotionalMedia.crops[0].renditions[0].url;
-  }
-
-  goCreative();
-
-}
-
-
 /*----------------------------*/
 /*-----> INITIALIZATION <-----*/
 /*----------------------------*/
