@@ -1128,7 +1128,7 @@ var creativeConfigObj = {
     // Feed URL should be entered as non-secure.  Function "getFeed" will modify to secrue where required.
     
     // feedURL: "https://res.cloudinary.com/nyt-platforms/raw/upload/v1547741558/Rei%20Test%20Creatives/1_17_19_QraphQL.json",
-    feedURL: "https://storage.googleapis.com/nyt-iq-workflow-output-dev/Input_test_4_articles.json",
+    feedURL: "https://storage.googleapis.com/nyt-iq-workflow-output-dev/Input_test_5_articles.json",
 
 
 
@@ -1229,43 +1229,47 @@ var creativeConfigObj = {
                 copy: "",
                 color: "#4990E2"
             }
-        }
-        //5
-        // {
-        //     logo: {
-        //         url:  "",
+        },
+       // 5
+        {
+            logo: {
+                url:  "",
             
-        //     },
-        //     kicker: {
-        //         copy: "SECTION",
-        //         color: "#CCC"
-        //     },
-        //     cta: {
-        //         copy: "",
-        //         color: "#4990E2"
-        //     }
-        // }
-        //5
-        // {
-        //     logo: {
-        //         url:  "",
-        
-        //     },
-        //     kicker: {
-        //         copy: "SECTION",
-        //         color: "#CCC"
-        //     },
-        //     cta: {
-        //         copy: "",
-        //         color: "#4990E2"
-        //     }
-        // }
-       
+            },
+            kicker: {
+                copy: "SECTION",
+                color: "#CCC"
+            },
+            cta: {
+                copy: "",
+                color: "#4990E2"
+            }
+        }  
 
     ]
 }
 
 /*-----> END TEMPLATE CONFIG  <-----*/
+
+
+function populateConfigObjArticleFramesWithFeedData(data) {
+  console.log("populateConfigObjArticleFramesWithFeedData");
+  var numberOfItem = data.data.anyWorks.length;
+  totalNumberOfItem = numberOfItem;
+
+  for (var i = 0; i < numberOfItem; i++) {
+    creativeConfigObj.articleFrames[i].headline = {
+      copy: data.data.anyWorks[i].promotionalHeadline,
+      color: "#FFF"
+    };
+    creativeConfigObj.articleFrames[i].headline;
+    creativeConfigObj.articleFrames[i].url = data.data.anyWorks[i].url;
+    creativeConfigObj.articleFrames[i].logo.url = data.data.anyWorks[i].promotionalMedia.crops[0].renditions[0].url;
+  }
+
+  goCreative();
+
+}
 
 
 /*----------------------------*/
